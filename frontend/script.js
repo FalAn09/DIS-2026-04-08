@@ -3,8 +3,8 @@ document.getElementById('helloBtn').addEventListener('click', async () => {
     messageDiv.textContent = 'Loading...';
     
     try {
-        console.log('Fetching from: http://backend:5000/api/hello');
-        const response = await fetch('http://backend:5000/api/hello');
+        console.log('Fetching from: /api/hello');
+        const response = await fetch('/api/hello');
         
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -12,6 +12,7 @@ document.getElementById('helloBtn').addEventListener('click', async () => {
         
         const data = await response.json();
         messageDiv.textContent = data.message || 'No message returned';
+        messageDiv.style.color = 'green';
         console.log('Success:', data);
     } catch (error) {
         console.error('Error:', error);
