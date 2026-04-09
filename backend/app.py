@@ -14,7 +14,7 @@ def hello():
     message = f"Hello World: {data['title']}"
     
     # Store in DB
-    conn = sqlite3.connect('messages.db')
+    conn = sqlite3.connect('db/messages.db')
     c = conn.cursor()
     c.execute('CREATE TABLE IF NOT EXISTS messages (id INTEGER PRIMARY KEY, content TEXT)')
     c.execute('INSERT INTO messages (content) VALUES (?)', (message,))
