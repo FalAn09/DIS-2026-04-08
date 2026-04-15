@@ -20,3 +20,4 @@ document.getElementById('helloBtn').addEventListener('click', async () => {
         messageDiv.style.color = 'red';
     }
 });
+// branch refactor/api_methods: refactor placeholder comment
